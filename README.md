@@ -58,7 +58,7 @@ This project includes Docker configuration for easy deployment.
 
    ```bash
    git clone https://github.com/palashnath880/sma-backend
-   cd school-management-api
+   cd sma-backend
    ```
 
 2. Start the services:
