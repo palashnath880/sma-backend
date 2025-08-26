@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # SMA Backend
+  app:
+    build: .
+    container_name: sma_backend
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://admin:admin@postgres:5432/sma?schema=public
+      - JWT_ACCESS_SECRET=D144C54E3F8F4EE1A5ACE6A797E7C
+      - JWT_REFRESH_SECRET=9C7851682B74C525D74D855BBBD95
+    ports:
+      - '3000:3000'
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: sma
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
