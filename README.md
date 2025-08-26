@@ -79,6 +79,10 @@ The following environment variables are required:
 | JWT_REFRESH_SECRET | Secret for refresh tokens | Your Secret Code                                         |
 | NODE_ENV           | Application environment   |                                                          |
 
+## Postman URL
+
+https://www.postman.com/palashnath880/school-management/collection/mvqy3cm/school-management-api?action=share&creator=46651304
+
 ## Authors
 
 - [Palash Nath](https://www.github.com/palashnath880)
